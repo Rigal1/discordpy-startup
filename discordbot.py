@@ -1,14 +1,17 @@
-import discord
-import diceSearchAndCalc as dice
-token = "ODExODgyMjE5NzM5MDIxMzEy.YC4qPQ.aAJcTTgYFFqmrEm4kJRRbm4HeH4"
-client = discord.Client()
+from discord.ext import commands
+import os
+import traceback
 
-@client.event
-async def on_ready():
-    # 起動したらターミナルにログイン通知が表示される
-    #print('ログインしました')
+bot = commands.Bot(command_prefix='/')
+token = os.environ['DISCORD_BOT_TOKEN']
 
-# メッセージ受信時に動作する処理
+
+@bot.event
+async def on_command_error(ctx, error):
+    orig_error = getattr(error, "original", error)
+    error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
+    await ctx.send(error_msg)
+    
 @client.event
 async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
@@ -33,10 +36,9 @@ async def reply(message, result):
     reply = f'{message.author.mention} {result}' # 返信メッセージの作成
     await message.channel.send(reply) # 返信メッセージを送信
 
-@bot.event
-async def on_command_error(ctx, error):
-    orig_error = getattr(error, "original", error)
-    error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
-    await ctx.send(error_msg)
+@bot.command()
+async def ping(ctx):
+    await ctx.send('pong')
 
-client.run(token)
+
+bot.run(token)
