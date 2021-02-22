@@ -1,17 +1,19 @@
 from discord.ext import commands
 import os
 import traceback
+import discord
 
-bot = commands.Bot(command_prefix='/')
+#bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
+client = discord.Client()
 
-
+"""
 @bot.event
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
-    
+""" 
 @client.event
 async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
@@ -35,10 +37,10 @@ async def on_message(message):
 async def reply(message, result):
     reply = f'{message.author.mention} {result}' # 返信メッセージの作成
     await message.channel.send(reply) # 返信メッセージを送信
-
+"""
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
+"""
 
-
-bot.run(token)
+client.run(token)
