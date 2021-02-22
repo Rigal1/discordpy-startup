@@ -1,1 +1,2 @@
 discord.py[voice]>=1.4.1
+jaconv>=0.2.4
