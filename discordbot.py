@@ -13,7 +13,7 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
-@client.event
+@bot.event
 async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
     #print(message.content[0:2])
@@ -21,7 +21,7 @@ async def on_message(message):
         return
     # 「/neko」と発言したら「にゃーん」が返る処理
     
-    if client.user in message.mentions: # 話しかけられたかの判定
+    if bot.user in message.mentions: # 話しかけられたかの判定
         await reply(message)
     
     if message.content == '/neko':
