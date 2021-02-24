@@ -14,7 +14,8 @@ async def on_command_error(ctx, error):
     await checkMissCount(ctx)
 
 async def checkMissCount(ctx):
-    print(memberList)
+    #print(memberList)
+    await removeList()
     idNumber = ctx.author.id
     ontime = time.time()
     if not memberList:
@@ -38,7 +39,14 @@ async def checkMissCount(ctx):
         memberList.append([idNumber, 0, ontime])
         await ctx.send(f"{ctx.author.mention}{botSentences[item[1]]}")
         
-                
+async def removeList():
+    removeNum = []
+    for i in range(len(memberList)):
+        if time.time() - memberList[i][2] >= limitTime:
+            removeNum.append(i)
+            
+    for i in removeNum:
+        memberList.pop(i)                
 
 @bot.command()
 async def r(ctx, arg):
