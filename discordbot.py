@@ -102,6 +102,6 @@ async def okawari(ctx):
 @bot.command()
 async def et(ctx):
     dice = random.randint(1,6)
-    await ctx.send(f"{ctx.author.mention} **{dice}** => `{emotionTable[dice]}`")
+    await ctx.send(f"{ctx.author.mention} **{dice}** => `{emotionTable[dice-1]}`")
 
 bot.run(token)
