@@ -2,6 +2,7 @@ from discord.ext import commands
 import os
 import traceback
 import diceSearchAndCalc as dice
+import time
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
