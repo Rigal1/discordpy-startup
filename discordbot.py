@@ -10,6 +10,7 @@ token = os.environ['DISCORD_BOT_TOKEN']
 limitTime = 30
 percent = 0.3
 memberList = []
+emotionTable = ["共感/不信", "友情/怒り", "愛情/妬み", "忠誠/侮蔑", "憧憬/劣等感", "狂信/殺意"]
 botSentences = ["コマンド間違えてるニャ！　気を付けるニャ！",
                 "コマンドが違うニャ！",
                 "また間違えてるのニャ！",
@@ -98,5 +99,9 @@ async def okawari(ctx):
     else:
         await ctx.send(f"{ctx.author.mention}ニャ（ぷい）")
 
+@bot.command()
+async def et(ctx):
+    dice = random.randint(1,6)
+    await ctx.send(f"{ctx.author.mention}{emotionTable[dice]}")
 
 bot.run(token)
