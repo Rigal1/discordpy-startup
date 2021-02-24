@@ -6,7 +6,7 @@ import time
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
-limitTime = 10
+limitTime = 30
 memberList = []
 botSentences = ["コマンド間違えてたニャ！　気を付けるニャ！",
                 "コマンドが違うニャ！",
