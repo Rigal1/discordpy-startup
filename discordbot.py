@@ -11,36 +11,56 @@ token = os.environ['DISCORD_BOT_TOKEN']
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
-    await ctx.send(error_msg)
+    await checkMissCount(ctx)
 
-@bot.event
-async def on_message(message):
-    # メッセージ送信者がBotだった場合は無視する
-    #print(message.content[0:2])
-    if message.author.bot:
-        return
-    # 「/neko」と発言したら「にゃーん」が返る処理
-    
-    if bot.user in message.mentions: # 話しかけられたかの判定
-        await reply(message)
-    
-    if message.content == '/neko':
-        await message.channel.send('にゃーん')
-    elif message.content[0:2] == "/r":
-        diceText = message.content[3:]
-        resultDice = dice.replaceAndCalc(diceText)
-        await reply(message, resultDice)
-        #await message.channel.send(resultDice)
+async def checkMissCount(ctx):
+    print(memberList)
+    idNumber = ctx.author.id
+    ontime = time.time()
+    if not memberList:
+        memberList.append([idNumber, 0, ontime])
+        await ctx.send(f"{ctx.author.mention}{botSentences[memberList[0][1]]}")
+    else:
+        for item in memberList:
+            if idNumber == item[0]:
+                if ontime - item[2] <= limitTime:
+                    item[2] = ontime
+                    item[1] += 1
+                    if item[1] >= len(botSentences):
+                        item[1] = 0
+                else:
+                    item[2] = ontime
+                    item[1] = 0
+                
+                await ctx.send(f"{ctx.author.mention}{botSentences[item[1]]}")
+                return
             
-    #print(message)
-async def reply(message, result):
-    reply = f'{message.author.mention} {result}' # 返信メッセージの作成
-    await message.channel.send(reply) # 返信メッセージを送信
-    
-"""    
-@bot.command()
-async def ping(ctx):
-    await ctx.send('pong')
+        memberList.append([idNumber, 0, ontime])
+        await ctx.send(f"{ctx.author.mention}{botSentences[item[1]]}")
+        
+                
 
-"""
+@bot.command()
+async def r(ctx, arg):
+    if ctx.author.bot:
+        return
+
+    result = dice.replaceAndCalc(arg)
+    reply = f"{ctx.author.mention}{result}"
+    await ctx.send(reply)
+    
+@bot.command()
+async def neko(ctx):
+    await ctx.send("ニャー")
+    
+@bot.command()
+async def Rigal(ctx):
+    rigal = "<@632853740159762435>"
+    await ctx.send(f"{rigal}は美少女")
+    
+@bot.command()
+async def kitaiti(ctx):
+    await ctx.send(f"{ctx.author.mention}**2D6** => 4(2+2) => **4**")
+
+
 bot.run(token)
