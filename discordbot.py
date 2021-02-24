@@ -6,6 +6,17 @@ import time
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
+limitTime = 10
+memberList = []
+botSentences = ["コマンド間違えてたニャ！　気を付けるニャ！",
+                "コマンドが違うニャ！",
+                "また間違えてるのニャ！",
+                "それは違うニャ！",
+                "……違うって言ってるニャ！",
+                "ニャー！　間違ってるのニャ！",
+                "フシャーーーーー！！",
+                "……引っ掻いてごめんなさいなのニャ。でも間違えてるのニャ",
+                "ほら、間違えてるのニャ"]
 
 
 @bot.event
