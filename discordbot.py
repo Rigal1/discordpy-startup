@@ -27,7 +27,7 @@ async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     #print(type(error))
-    print(error_msg)
+    #print(error_msg)
     if type(error) == CommandNotFound:
         await ctx.send(f"{ctx.author.mention} そのコマンドは無いのニャ！")
     elif type(error) == MissingRequiredArgument:
