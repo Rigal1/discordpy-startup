@@ -70,4 +70,8 @@ async def et(ctx):
     dice = random.randint(1,6)
     await ctx.send(f"{ctx.author.mention} **{dice}** => `{emotionTable[dice-1]}`")
 
+@bot.command()
+async def リガルは美少女(ctx):
+    await ctx.send(f"{ctx.author.mention} それは違うのニャ！")
+
 bot.run(token)
