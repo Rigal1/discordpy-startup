@@ -45,7 +45,7 @@ async def r(ctx, arg):
     
 @bot.command()
 async def neko(ctx):
-    await ctx.send("ニャー")
+    await ctx.send("ニャーア♪")
     
 @bot.command()
 async def kitaiti(ctx):
