@@ -2,9 +2,21 @@ from discord.ext import commands
 import os
 import traceback
 import diceSearchAndCalc as dice
+import time
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
+limitTime = 30
+memberList = []
+botSentences = ["コマンド間違えてたニャ！　気を付けるニャ！",
+                "コマンドが違うニャ！",
+                "また間違えてるのニャ！",
+                "それは違うニャ！",
+                "……違うって言ってるニャ！",
+                "ニャー！　間違ってるのニャ！",
+                "フシャーーーーー！！",
+                "……引っ掻いてごめんなさいなのニャ。でも間違えてるのニャ",
+                "ほら、間違えてるのニャ"]
 
 
 @bot.event
@@ -14,7 +26,8 @@ async def on_command_error(ctx, error):
     await checkMissCount(ctx)
 
 async def checkMissCount(ctx):
-    print(memberList)
+    #print(memberList)
+    await removeList()
     idNumber = ctx.author.id
     ontime = time.time()
     if not memberList:
@@ -38,7 +51,14 @@ async def checkMissCount(ctx):
         memberList.append([idNumber, 0, ontime])
         await ctx.send(f"{ctx.author.mention}{botSentences[item[1]]}")
         
-                
+async def removeList():
+    removeNum = []
+    for i in range(len(memberList)):
+        if time.time() - memberList[i][2] >= limitTime:
+            removeNum.append(i)
+            
+    for i in removeNum:
+        memberList.pop(i)                
 
 @bot.command()
 async def r(ctx, arg):
