@@ -113,7 +113,7 @@ def markdownText(getData):
     
     commentText = ""
     if getData[4] != "":
-        commentText = f"  #`{getData[4]}`"
+        commentText = f"  `{getData[4]}`"
     
     formattedText = f"{inputText} =>{allDiceText} {resultDiceText}{judgeResultText}{commentText}"
     return formattedText
