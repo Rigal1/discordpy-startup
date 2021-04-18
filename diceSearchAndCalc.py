@@ -28,7 +28,7 @@ def calcDice(getText, id):
     
     for i in range(int(dice[0])):
         diceResult = random.randint(1, int(dice[1]))
-        if id == '543824507178057742':
+        if id == 543824507178057742:
             diceResult = 1
             
         allDice.append(diceResult)
@@ -42,7 +42,7 @@ def calcDice(getText, id):
 def calcD66(id):
     dice1 = random.randint(1,6)
     dice2 = random.randint(1,6)
-    if id == '543824507178057742':
+    if id == 543824507178057742:
         dice1 = 1
         dice2 = 1
     
