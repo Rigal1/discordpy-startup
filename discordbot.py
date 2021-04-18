@@ -71,6 +71,7 @@ async def okawari(ctx):
 
 @bot.command()
 async def et(ctx):
+    id = ctx.author.id
     if id == 495201006209073152:#モノアイ
         await ctx.send(f"{ctx.author.mention} **3** => 愛情/愛情")
     elif id == 452400598692659202:#正方形
