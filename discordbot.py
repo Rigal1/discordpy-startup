@@ -73,11 +73,37 @@ async def okawari(ctx):
 async def et(ctx):
     id = ctx.author.id
     if id == 495201006209073152:#モノアイ
-        await ctx.send(f"{ctx.author.mention} **3** => 愛情/愛情")
+        await ctx.send(f"{ctx.author.mention} **愛情** => `もこさんへの愛情/りんごさんへの愛情`")
     elif id == 452400598692659202:#正方形
-        await ctx.send(f"{ctx.author.mention} **0** => 気まぐれ/おもちゃ")
+        await ctx.send(f"{ctx.author.mention} **性質** => `気まぐれ/おもちゃ`")
     elif id == 543824507178057742:#サイア
-        await ctx.send(f"{ctx.author.mention} **7** => 君には星見は/微笑まない")
+        await ctx.send(f"{ctx.author.mention} **運命** => `君に星見は/微笑まない`")
+    elif id == 238616371624280065:#咲月
+        await ctx.send(f"{ctx.author.mention} **犬** => `チワワ/パピヨン`")
+    elif id == 614789895487225877:#ゼロ
+        await ctx.send(f"{ctx.author.mention} **挨拶** => `浸蝕/戦闘機`")
+    elif id == 670410622164402191:#ウーティス
+        await ctx.send(f"{ctx.author.mention} **感情** => `ナナシノさんへの愛情/ナナシノさんへの狂信`")
+    elif id == 607935585587298325:#ナナシノユクエフメイ
+        await ctx.send(f"{ctx.author.mention} **彼女** => `うてさん/ウーティスさん`")
+    elif id == 639430569989636099:#ハブクサ
+        await ctx.send(f"{ctx.author.mention} **神忍法は** => `夜叉/帝釈天`")
+    elif id == 832024579887202305:#つゆ
+        await ctx.send(f"{ctx.author.mention} **年齢** => `2歳のJD/四十前半`")
+    elif id == 830204792504057877:#そーは
+        await ctx.send(f"{ctx.author.mention} **情緒を殺したのは** => `サボテンさん/つゆさん`")
+    elif id == 335106138041352192:#京極
+        await ctx.send(f"{ctx.author.mention} **犬＝** => `咲月さん/つゆさん`")
+    elif id == 830217559009132545:#きんすざく
+        await ctx.send(f"{ctx.author.mention} **{dice}** => `　　　　　　←あぶり出し`")
+    elif id == 662676435911180304:#むぎはすく
+        await ctx.send(f"{ctx.author.mention} **正体** => `遁甲符/双影呟鬼`")
+    elif id == 302813277581213697:#砂木
+        await ctx.send(f"{ctx.author.mention} **神絵師** => `可愛い/アイコン永遠に感謝`")
+    elif id == 619504754959056906:#さるみかん
+        await ctx.send(f"{ctx.author.mention} **ガバ** => `天井裏のベッド/辛い時は言ってYo`")
+    elif id == 632853740159762435:#リガル
+        await ctx.send(f"{ctx.author.mention} **この騒動の** => `主犯/元凶`")
     else:
         dice = random.randint(1,6)
         await ctx.send(f"{ctx.author.mention} **{dice}** => `{emotionTable[dice-1]}`")
