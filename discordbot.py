@@ -39,7 +39,7 @@ async def r(ctx, arg):
     if ctx.author.bot:
         return
 
-    result = dice.replaceAndCalc(arg)
+    result = dice.replaceAndCalc(arg, ctx.author.id)
     reply = f"{ctx.author.mention} {result}"
     await ctx.send(reply)
     
