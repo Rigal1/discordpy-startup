@@ -71,8 +71,15 @@ async def okawari(ctx):
 
 @bot.command()
 async def et(ctx):
-    dice = random.randint(1,6)
-    await ctx.send(f"{ctx.author.mention} **{dice}** => `{emotionTable[dice-1]}`")
+    if id == 495201006209073152:#モノアイ
+        await ctx.send(f"{ctx.author.mention} **3** => 愛情/愛情")
+    elif id == 452400598692659202:#正方形
+        await ctx.send(f"{ctx.author.mention} **0** => 気まぐれ/おもちゃ")
+    elif id == 543824507178057742:#サイア
+        await ctx.send(f"{ctx.author.mention} **7** => 君には星見は/微笑まない")
+    else:
+        dice = random.randint(1,6)
+        await ctx.send(f"{ctx.author.mention} **{dice}** => `{emotionTable[dice-1]}`")
 
 @bot.command()
 async def リガルは美少女(ctx):
