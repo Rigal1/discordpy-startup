@@ -88,13 +88,13 @@ async def et(ctx):
         await ctx.send(f"{ctx.author.mention} **彼女** => `うてさん/ウーティスさん`")
     elif id == 639430569989636099:#ハブクサ
         await ctx.send(f"{ctx.author.mention} **神忍法は** => `夜叉/帝釈天`")
-    elif id == 832024579887202305:#つゆ
+    elif id == 557209926691454976:#つゆ
         await ctx.send(f"{ctx.author.mention} **年齢** => `2歳のJD/四十前半`")
-    elif id == 830204792504057877:#そーは
+    elif id == 347647544454807574:#そーは
         await ctx.send(f"{ctx.author.mention} **情緒を殺したのは** => `サボテンさん/つゆさん`")
     elif id == 335106138041352192:#京極
         await ctx.send(f"{ctx.author.mention} **犬＝** => `咲月さん/つゆさん`")
-    elif id == 830217559009132545:#きんすざく
+    elif id == 372355770316095488:#きんすざく
         await ctx.send(f"{ctx.author.mention} **{dice}** => `　　　　　　←あぶり出し`")
     elif id == 662676435911180304:#むぎはすく
         await ctx.send(f"{ctx.author.mention} **正体** => `遁甲符/双影呟鬼`")
