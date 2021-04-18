@@ -47,9 +47,11 @@ async def r(ctx, arg):
 async def neko(ctx):
     await ctx.send("ニャーア♪")
     
+
+    
 @bot.command()
 async def kitaiti(ctx):
-    if ctx.author.id == '632853740159762435':
+    if ctx.author.id == 632853740159762435:
         await ctx.send("AAAAAAA")
     await ctx.send(f"{ctx.author.mention}**2D6** => 4(2+2) => **4**")
     
