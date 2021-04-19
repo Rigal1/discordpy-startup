@@ -72,6 +72,7 @@ async def okawari(ctx):
 @bot.command()
 async def et(ctx):
     id = ctx.author.id
+    dice = random.randint(1,6)
     if id == 495201006209073152:#モノアイ
         await ctx.send(f"{ctx.author.mention} **愛情** => `もこさんへの愛情/りんごさんへの愛情`")
     elif id == 452400598692659202:#正方形
@@ -105,7 +106,6 @@ async def et(ctx):
     elif id == 632853740159762435:#リガル
         await ctx.send(f"{ctx.author.mention} **この騒動の** => `主犯/元凶`")
     else:
-        dice = random.randint(1,6)
         await ctx.send(f"{ctx.author.mention} **{dice}** => `{emotionTable[dice-1]}`")
 
 @bot.command()
