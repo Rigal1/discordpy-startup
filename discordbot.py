@@ -82,7 +82,7 @@ async def et(ctx):
     elif id == 238616371624280065:#咲月
         await ctx.send(f"{ctx.author.mention} **犬** => `チワワ/パピヨン`")
     elif id == 614789895487225877:#ゼロ
-        await ctx.send(f"{ctx.author.mention} **性別** => `女性/戦闘機`")
+        await ctx.send(f"{ctx.author.mention} **挨拶** => `浸蝕/人質`")
     elif id == 670410622164402191:#ウーティス
         await ctx.send(f"{ctx.author.mention} **感情** => `ナナシノさんへの愛情/ナナシノさんへの狂信`")
     elif id == 607935585587298325:#ナナシノユクエフメイ
