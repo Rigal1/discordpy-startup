@@ -30,8 +30,8 @@ async def on_command_error(ctx, error):
     elif type(error) == MissingRequiredArgument:
         await ctx.send(f"{ctx.author.mention} コマンドが足りないニャ！")
     else:
-        messageDice = random.randint(0,len(botSentences)-1)
-        await ctx.send(f"{ctx.author.mention} {botSentences[messageDice]}")
+        #messageDice = random.randint(0,len(botSentences)-1)
+        await ctx.send(f"{ctx.author.mention} ごめんなさいニャ、何かエラーが起こったみたいニャ")
          
 
 @bot.command()
@@ -54,16 +54,16 @@ async def kitaiti(ctx):
 @bot.command()
 async def ote(ctx):
     if random.random() >= percent:
-        await ctx.send(f"{ctx.author.mention}ニャ（ぽふ）")
+        await ctx.send(f"{ctx.author.mention} ニャ（ぽふ）")
     else:
-        await ctx.send(f"{ctx.author.mention}ニャ（ぷい）")
+        await ctx.send(f"{ctx.author.mention} ニャ（ぷい）")
     
 @bot.command()
 async def okawari(ctx):
     if random.random() >= percent:
-        await ctx.send(f"{ctx.author.mention}ニャ（ぺふ）")
+        await ctx.send(f"{ctx.author.mention} ニャ（ぺふ）")
     else:
-        await ctx.send(f"{ctx.author.mention}ニャ（ぷい）")
+        await ctx.send(f"{ctx.author.mention} ニャ（ぷい）")
 
 @bot.command()
 async def et(ctx):
