@@ -65,6 +65,11 @@ async def okawari(ctx):
     else:
         await ctx.send(f"{ctx.author.mention} ニャ（ぷい）")
 
+
+@bot.command()
+async def なでなで(ctx):
+    await ctx.send(f"{ctx.author.mention} ニャァ～（ゴロゴロ）")
+        
 @bot.command()
 async def et(ctx):
     dice = random.randint(1,6)
